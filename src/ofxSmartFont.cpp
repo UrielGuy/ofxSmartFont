@@ -23,6 +23,8 @@
 
 
 #include "ofxSmartFont.h"
+#include "spdlog/spdlog.h"
+
 std::vector<std::shared_ptr<ofxSmartFont>> ofxSmartFont::mFonts;
 
 /*
@@ -143,6 +145,6 @@ void ofxSmartFont::list()
 
 void ofxSmartFont::log(std::string msg)
 {
-    std::cout << "ofxSmartFont :: "<< msg << std::endl;
+    spdlog::debug("ofxSmartFont :: {}", msg);
 }
 
